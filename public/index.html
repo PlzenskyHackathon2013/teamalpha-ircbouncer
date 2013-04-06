@@ -1,11 +1,11 @@
 <script src="/socket.io/socket.io.js"></script>
+<script src="/jquery.js"></script>
 <script>
   var socket = io.connect('http://app-teamalpha.ph:8000');
   socket.on('event', function (data) {
     console.log(data);
-    el = getElementById("content");
-    el.innerHTML = data.message + "\n";
-    //socket.emit('my other event', { my: 'data' });
+    var area = $('#area');
+    area.val(data.message + "\n" + are.val());
   });
 </script>
 
