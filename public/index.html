@@ -1,10 +1,16 @@
-hello world
-
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io.connect('http://app-teamalpha.ph:8000');
   socket.on('event', function (data) {
     console.log(data);
+    el = getElementById("content");
+    el.text = data.message + "\n" + el.text;
     //socket.emit('my other event', { my: 'data' });
   });
 </script>
+
+<html>
+<body>
+<TEXTAREA id="content" ROWS=15 COLS=40></TEXTAREA>
+</body>
+</html>
