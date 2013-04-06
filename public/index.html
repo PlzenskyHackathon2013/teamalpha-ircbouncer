@@ -20,10 +20,11 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    row = $('<tr/>');
+	    row = $('<tr/>').css('display', 'none');
 	    row.append($('<td/>').css('font-weight', 'bold').html(data.channel));
 	    row.append($('<td/>').html(data.message));
 	    area.prepend(row);
+	    row.slideUp();
 	  });
 	</script>
 
