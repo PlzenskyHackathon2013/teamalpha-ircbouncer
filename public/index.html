@@ -23,6 +23,7 @@
 	    row = $('<div/>').css('display', 'none');//.css('height', '80px');
 	    row.append($('<div/>').css('font-weight', 'bold').css('padding-left', '20px').css('float', 'left').css('width', '80px').html(data.channel));
 	    row.append($('<div/>').css('float', 'left').css('padding-left', '10px').html(data.message));
+	    row.append($('<div/>').css('clear', 'both'));
 	    area.append(row);
 	    row.slideDown("slow");
 	    area.animate({ scrollTop: area.height() }, "slow");
