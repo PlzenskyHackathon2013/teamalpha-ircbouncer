@@ -16,21 +16,25 @@
 	<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
     <script src="/bootstrap/js/bootstrap-collapse.js"></script>
 	<script>
-	  var socket = io.connect('http://app-teamalpha.ph:8000');
-	  socket.on('event', function (data) {
-	    console.log(data);
+	  var addMessage = function(user, message){
 	    var area = $('#area');
 	    row = $('<div/>').css('display', 'none').css('height', '20px');
-	    row.append($('<div/>').css('font-weight', 'bold').css('padding-left', '20px').css('float', 'left').css('width', '80px').html(data.channel));
-	    row.append($('<div/>').css('float', 'left').css('padding-left', '10px').html(data.message));
+	    row.append($('<div/>').css('font-weight', 'bold').css('padding-left', '20px').css('float', 'left').css('width', '80px').html(user));
+	    row.append($('<div/>').css('float', 'left').css('padding-left', '10px').html(message));
 	    row.append($('<div/>').css('clear', 'both'));
 	    area.append(row);
 	    row.slideDown("slow");
 	    area.animate({ scrollTop: area.height() }, "slow");
+	  };
+	  var socket = io.connect('http://app-teamalpha.ph:8000');
+	  socket.on('event', function (data) {
+	  	addMessage(data.channel, data.message);
 	  });
 	  $(function(){
 	  	$('#send').click(function(){
-	  		socket.emit('message', $("#message").val());
+	  		msg = $("#message").val();
+	  		socket.emit('message', msg);
+	  		addMessage('---', msg);
 	  	});
 	  });
 	</script>
