@@ -20,7 +20,7 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    row = $('<div/>').css('display', 'none');//.css('height', '80px');
+	    row = $('<div/>').css('display', 'none').css('height', '20px');
 	    row.append($('<div/>').css('font-weight', 'bold').css('padding-left', '20px').css('float', 'left').css('width', '80px').html(data.channel));
 	    row.append($('<div/>').css('float', 'left').css('padding-left', '10px').html(data.message));
 	    row.append($('<div/>').css('clear', 'both'));
@@ -87,7 +87,7 @@
                     </div>
                     <h1>IRC feed</h1>
                   </header>
-                  <div id="area" style="overflow: auto;height: 800px;"> 
+                  <div id="area" style="overflow: auto;height: 40px;"> 
                   </div>
                 </section>
             </div>
