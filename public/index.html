@@ -21,7 +21,7 @@
 	    console.log(data);
 	    var area = $('#area');
 	    row = $('<tr/>');
-	    row.append($('<td/>').html(data.channel));
+	    row.append($('<td/>').css('font-weight', 'bold').html(data.channel));
 	    row.append($('<td/>').html(data.message));
 	    area.prepend(row);
 	  });
@@ -86,8 +86,8 @@
 					<table class="table table-striped full-section table-hover">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Message</th>
+                        <th style="width: 100px;"></th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody id="area"> 
