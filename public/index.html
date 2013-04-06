@@ -20,7 +20,7 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    row = $('<tr/>').css('display', 'none');
+	    row = $('<tr/>').css('display', 'none').css('height', '80px');
 	    row.append($('<td/>').css('font-weight', 'bold').html(data.channel));
 	    row.append($('<td/>').html(data.message));
 	    area.prepend(row);
