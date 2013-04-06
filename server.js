@@ -2,7 +2,7 @@
 
 var Bouncer = require('./lib/bouncer.js'),
     IrcClient = require('./lib/irc_client'),
-    Web = require('./lib/web.js');
+    Web = require('./lib/webClient.js');
 
 var bouncer = new Bouncer.Bouncer();
 
