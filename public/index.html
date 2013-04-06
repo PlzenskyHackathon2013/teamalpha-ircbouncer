@@ -28,6 +28,9 @@
 	    row.slideDown("slow");
 	    area.animate({ scrollTop: area.height() }, "slow");
 	  });
+	  $('#send').click(function(){
+	  	socket.emit('message', $("#message").val());
+	  });
 	</script>
 
 </head>
@@ -89,6 +92,8 @@
                   </header>
                   <div id="area" style="overflow: auto;height: 40px;"> 
                   </div>
+                  <input type="text" id="message"/>
+                  <input type="button" class="btn btn-success" value="Send" id="send"/>
                 </section>
             </div>
         </div>
