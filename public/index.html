@@ -5,12 +5,12 @@
   socket.on('event', function (data) {
     console.log(data);
     var area = $('#area');
-    area.val(data.message + "\n" + area.val());
+    area.prepend($('<p/>').html(data.message));
   });
 </script>
 
 <html>
 <body>
-<TEXTAREA id="content" ROWS=15 COLS=40></TEXTAREA>
+<div id="area"></div>
 </body>
 </html>
