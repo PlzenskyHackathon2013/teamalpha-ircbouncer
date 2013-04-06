@@ -20,7 +20,10 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    area.prepend($('<p/>').html(data.message));
+	    row = $('<tr/>');
+	    row.append($('<td/>').html(data.channel));
+	    row.append($('<td/>').html(data.message));
+	    area.prepend(row);
 	  });
 	</script>
 
@@ -71,9 +74,6 @@
         </div>
         <div class="span9" id="content-wrapper">
             <div id="content">
-
-                <!-- Navbar
-                ================================================== -->
                 <section id="stats">
                   <header>
                     <div class="pull-right">
@@ -83,7 +83,16 @@
                     <h1>Dashboard</h1>
                   </header>
                   <div class="row-fluid">
-					<div id="area"></div>
+					<table class="table table-striped full-section table-hover">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Message</th>
+                      </tr>
+                    </thead>
+                    <tbody id="area"> 
+                    </tbody>
+                  </table>
 				  </div>
                 </section>
             </div>
