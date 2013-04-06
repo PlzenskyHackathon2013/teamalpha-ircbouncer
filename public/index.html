@@ -28,8 +28,10 @@
 	    row.slideDown("slow");
 	    area.animate({ scrollTop: area.height() }, "slow");
 	  });
-	  $('#send').click(function(){
-	  	socket.emit('message', $("#message").val());
+	  $(function(){
+	  	$('#send').click(function(){
+	  		socket.emit('message', $("#message").val());
+	  	});
 	  });
 	</script>
 
