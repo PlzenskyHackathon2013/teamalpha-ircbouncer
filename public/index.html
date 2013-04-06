@@ -20,11 +20,12 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    row = $('<div/>').css('display', 'none').css('height', '80px');
-	    row.append($('<div/>').css('font-weight', 'bold').css('float', 'left').css('width', '80px').html(data.channel));
-	    row.append($('<div/>').css('float', 'left').html(data.message));
-	    area.prepend(row);
+	    row = $('<div/>').css('display', 'none');//.css('height', '80px');
+	    row.append($('<div/>').css('font-weight', 'bold').css('padding-left', '20px').css('float', 'left').css('width', '80px').html(data.channel));
+	    row.append($('<div/>').css('float', 'left').css('padding-left', '10px').html(data.message));
+	    area.append(row);
 	    row.slideDown("slow");
+	    area.animate({ scrollTop: area.height() }, "slow");
 	  });
 	</script>
 
@@ -85,7 +86,7 @@
                     </div>
                     <h1>IRC feed</h1>
                   </header>
-                  <div id="area"> 
+                  <div id="area" style="overflow: auto;height: 800px;"> 
                   </div>
                 </section>
             </div>
