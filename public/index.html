@@ -1,17 +1,105 @@
-<link rel="stylesheet" type="text/css" href="/inspiritas.css"/>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/jquery.js"></script>
-<script>
-  var socket = io.connect('http://app-teamalpha.ph:8000');
-  socket.on('event', function (data) {
-    console.log(data);
-    var area = $('#area');
-    area.prepend($('<p/>').html(data.message));
-  });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Inspiritas - a free Bootstrap theme by Ripple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="/inspiritas.css" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="/jquery.js"></script>
+	<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/bootstrap/js/bootstrap-collapse.js"></script>
+	<script>
+	  var socket = io.connect('http://app-teamalpha.ph:8000');
+	  socket.on('event', function (data) {
+	    console.log(data);
+	    var area = $('#area');
+	    area.prepend($('<p/>').html(data.message));
+	  });
+	</script>
 
-<html>
+</head>
+
 <body>
-<div id="area"></div>
+
+<div class="navbar navbar-static-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="#">INSPIRITAS</a>
+      <span class="tagline">a free Bootstrap theme by Ripple. <a href="http://littke.com/2012/11/06/inspiritas-bootstrap-theme-by-ripple.html">Read more.</a></span>
+
+      <div class="nav-collapse collapse" id="main-menu">
+        <div class="auth pull-right">
+            <img class="avatar" src="images/littke.png">
+            <span class="name">Jonatan Littke</span><br/>
+            <span class="links">
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row-fluid">
+        <div class="span3">
+            <aside>
+                <nav>
+                    <ul class="nav">
+                      <li class="selected">
+                        <a href=""><i class="icon-play"></i> Dashboard</a>
+                      </li>
+                      <li>
+                        <a href=""><i class="icon-th-list icon-white"></i> Campaigns</a>
+                      </li>
+                      <li>
+                        <a href=""><i class="icon-font icon-white"></i> Typography</a>
+                      </li>
+                      <li>
+                        <a href=""><i class="icon-user icon-white"></i> Members</a>
+                      </li>
+                      <li>
+                        <a href=""><i class="icon-retweet icon-white"></i> Sexalicious</a>
+                      </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+        <div class="span9" id="content-wrapper">
+            <div id="content">
+
+                <!-- Navbar
+                ================================================== -->
+                <section id="stats">
+                  <header>
+                    <div class="pull-right">
+                        <a class="btn btn-small">Edit</a>
+                        <a class="btn btn-small">Shoot me</a>
+                    </div>
+                    <h1>Dashboard</h1>
+                  </header>
+                  <div class="row-fluid">
+					<div id="area"></div>
+				  </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
