@@ -20,9 +20,9 @@
 	  socket.on('event', function (data) {
 	    console.log(data);
 	    var area = $('#area');
-	    row = $('<tr/>').css('display', 'none').css('height', '80px');
-	    row.append($('<td/>').css('font-weight', 'bold').html(data.channel));
-	    row.append($('<td/>').html(data.message));
+	    row = $('<div/>').css('display', 'none').css('height', '80px');
+	    row.append($('<div/>').css('font-weight', 'bold').css('float', 'left').css('width', '80px').html(data.channel));
+	    row.append($('<div/>').css('float', 'left').html(data.message));
 	    area.prepend(row);
 	    row.slideDown("slow");
 	  });
@@ -85,16 +85,8 @@
                     </div>
                     <h1>IRC feed</h1>
                   </header>
-				  <table class="table table-striped full-section table-hover">
-                    <thead>
-                      <tr>
-                        <th style="width: 100px;"></th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody id="area"> 
-                    </tbody>
-                  </table>
+                  <div id="area"> 
+                  </div>
                 </section>
             </div>
         </div>
