@@ -32,7 +32,8 @@
   },
 
   "dependencies": {
-    "irc": "0.3.x"
+    "irc": "0.3.x",
+    "express": ""
   },
 
   "devDependencies": {},
