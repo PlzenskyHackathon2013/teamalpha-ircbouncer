@@ -1,22 +1,29 @@
 {
+  
   "name": "OpenShift-Sample-App",
+  
   "version": "1.0.0",
+  
   "description": "OpenShift Sample Application",
+  
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
     "openshift"
   ],
+
   "author": {
     "name": "OpenShift",
     "email": "ramr@example.org",
     "url":  "http://openshift.redhat.com/"
   },
+
   "homepage": "http://openshift.redhat.com/",
+  
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/openshift/origin-server"
+    "url": ""
   },
 
   "engines": {
@@ -25,10 +32,16 @@
   },
 
   "dependencies": {
+    "irc": "0.3.x",
+    "mongodb": "0.9.x",
+    "express": "3.1.x"
   },
+
   "devDependencies": {},
+
   "bundleDependencies": [],
 
   "private": true,
+
   "main": "server.js"
 }
